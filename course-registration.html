@@ -32,7 +32,7 @@
         [x-cloak] { display: none !important; }
     </style>
 </head>
-<body class="bg-[#fcfcfc] text-gray-800 font-sans antialiased">
+<body class="bg-[#fcfcfc] text-gray-800 font-sans antialiased" x-data="{ paymentMethod: 'transfer' }">
 
     <nav class="bg-white border-b border-gray-100 py-4">
         <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
@@ -45,11 +45,11 @@
         </div>
     </nav>
 
-    <main class="max-w-4xl mx-auto px-6 py-12" x-data="{ showUpload: false }">
+    <main class="max-w-4xl mx-auto px-6 py-12">
         
         <div class="mb-10">
             <h1 class="text-3xl font-black text-gray-900 mb-2">Course Registration</h1>
-            <p class="text-gray-500">Please review the course details and complete your payment to secure your seat.</p>
+            <p class="text-gray-500">Secure your seat by choosing your preferred payment method.</p>
         </div>
 
         <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
@@ -67,75 +67,86 @@
                             <p class="font-bold text-gray-700">3 Months (24 Sessions)</p>
                         </div>
                         <div>
-                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Schedule</p>
-                            <p class="font-bold text-gray-700">Tue & Thu (16:00 - 18:00)</p>
-                        </div>
-                        <div>
-                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Instructor</p>
-                            <p class="font-bold text-gray-700">Prof. Elizabeth W.</p>
-                        </div>
-                        <div>
                             <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Investment</p>
                             <p class="font-bold text-gold-primary">Rp 2.500.000</p>
                         </div>
                     </div>
 
                     <div class="border-t border-dashed border-gray-100 pt-6">
-                        <h4 class="text-sm font-black text-gray-900 mb-3 uppercase tracking-wider">Payment Steps:</h4>
-                        <ul class="space-y-3">
-                            <li class="flex gap-3 text-sm text-gray-500">
-                                <span class="w-5 h-5 rounded-full bg-gray-900 text-white flex items-center justify-center text-[10px] shrink-0">1</span>
-                                Transfer the exact amount to the bank account listed.
-                            </li>
-                            <li class="flex gap-3 text-sm text-gray-500">
-                                <span class="w-5 h-5 rounded-full bg-gray-900 text-white flex items-center justify-center text-[10px] shrink-0">2</span>
-                                Take a clear photo or screenshot of your transfer receipt.
-                            </li>
-                            <li class="flex gap-3 text-sm text-gray-500">
-                                <span class="w-5 h-5 rounded-full bg-gray-900 text-white flex items-center justify-center text-[10px] shrink-0">3</span>
-                                Upload the file and click "Complete Registration".
-                            </li>
-                        </ul>
+                        <h4 class="text-sm font-black text-gray-900 mb-4 uppercase tracking-wider">Select Payment Method:</h4>
+                        
+                        <div class="grid grid-cols-2 gap-4">
+                            <label :class="paymentMethod === 'transfer' ? 'border-gold-primary bg-gold-soft/50' : 'border-gray-100 bg-white'" 
+                                   class="relative flex flex-col p-4 border-2 rounded-2xl cursor-pointer transition-all hover:border-gold-primary/50">
+                                <input type="radio" name="pay" value="transfer" x-model="paymentMethod" class="sr-only">
+                                <i class="fas fa-university text-xl mb-2" :class="paymentMethod === 'transfer' ? 'text-gold-primary' : 'text-gray-300'"></i>
+                                <span class="text-xs font-black uppercase">Bank Transfer</span>
+                                <span class="text-[10px] text-gray-400 font-bold">Manual Verification</span>
+                            </label>
+
+                            <label :class="paymentMethod === 'cash' ? 'border-gold-primary bg-gold-soft/50' : 'border-gray-100 bg-white'" 
+                                   class="relative flex flex-col p-4 border-2 rounded-2xl cursor-pointer transition-all hover:border-gold-primary/50">
+                                <input type="radio" name="pay" value="cash" x-model="paymentMethod" class="sr-only">
+                                <i class="fas fa-money-bill-wave text-xl mb-2" :class="paymentMethod === 'cash' ? 'text-gold-primary' : 'text-gray-300'"></i>
+                                <span class="text-xs font-black uppercase">Cash Payment</span>
+                                <span class="text-[10px] text-gray-400 font-bold">Pay at Reception</span>
+                            </label>
+                        </div>
                     </div>
                 </div>
             </div>
 
             <div class="lg:col-span-2 space-y-6">
-                <div class="bg-gray-900 rounded-[2rem] p-8 text-white shadow-xl relative overflow-hidden">
+                
+                <div x-show="paymentMethod === 'transfer'" x-transition 
+                     class="bg-gray-900 rounded-[2rem] p-8 text-white shadow-xl relative overflow-hidden">
                     <div class="relative z-10">
-                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-4">Official Payment Account</p>
-                        <div class="mb-6">
+                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-4">Official Bank Account</p>
+                        <div class="mb-4">
                             <p class="text-xs text-gray-400 mb-1">Bank Central Asia (BCA)</p>
                             <p class="text-xl font-black tracking-widest leading-none">8123 0044 55</p>
-                            <p class="text-sm font-bold mt-2">SAGU Foundation Indonesia</p>
-                        </div>
-                        <div class="flex items-center gap-2 text-gold-light">
-                            <i class="fas fa-shield-check"></i>
-                            <span class="text-[10px] font-bold uppercase">Verified Merchant</span>
+                            <p class="text-sm font-bold mt-2 text-gold-light">SAGU Foundation Indonesia</p>
                         </div>
                     </div>
                     <i class="fas fa-university absolute -bottom-4 -right-4 text-8xl text-white/5"></i>
                 </div>
 
-                <div class="space-y-4">
-                    <button x-show="!showUpload" @click="showUpload = true" 
-                            class="w-full gold-gradient text-white font-black py-5 rounded-[1.5rem] shadow-lg shadow-gold-primary/20 hover:scale-[1.02] transition-transform flex items-center justify-center gap-3">
-                        CONFIRM PAYMENT <i class="fas fa-arrow-right"></i>
-                    </button>
+                <div x-show="paymentMethod === 'cash'" x-transition x-cloak
+                     class="bg-white rounded-[2rem] p-8 border border-gold-primary/20 shadow-sm relative overflow-hidden">
+                    <div class="relative z-10">
+                        <div class="flex items-center gap-3 text-gold-primary mb-4">
+                            <i class="fas fa-info-circle"></i>
+                            <p class="text-[10px] font-black uppercase tracking-widest">Cash Instruction</p>
+                        </div>
+                        <p class="text-xs text-gray-500 leading-relaxed font-medium">
+                            Please visit <span class="font-bold text-gray-900">SAGU Office, Jayapura</span> within <span class="text-red-500 font-bold">48 hours</span> to complete your payment. Bring your ID and Student ID.
+                        </p>
+                    </div>
+                </div>
 
-                    <div x-show="showUpload" x-transition x-cloak class="bg-white border-2 border-gold-primary/20 border-dashed rounded-[2rem] p-8 animate-fadeIn">
+                <div class="space-y-4">
+                    <div x-show="paymentMethod === 'transfer'" x-transition class="bg-white border-2 border-gold-primary/20 border-dashed rounded-[2rem] p-8">
                         <label class="block text-center cursor-pointer">
                             <div class="w-16 h-16 bg-gold-soft rounded-full flex items-center justify-center text-gold-primary mx-auto mb-4">
                                 <i class="fas fa-cloud-upload-alt text-2xl"></i>
                             </div>
                             <span class="block text-sm font-black text-gray-900 uppercase tracking-widest mb-1">Upload Receipt</span>
-                            <span class="block text-xs text-gray-400 mb-4">JPG, PNG, or PDF (Max 2MB)</span>
+                            <span class="block text-[10px] text-gray-400 mb-4">JPG or PNG (Max 2MB)</span>
                             <input type="file" class="hidden">
                         </label>
                         
-                        <button class="w-full bg-gray-900 text-white font-black py-4 rounded-xl text-xs tracking-widest hover:bg-black transition mt-4 uppercase">
+                        <button class="w-full gold-gradient text-white font-black py-4 rounded-xl text-xs tracking-widest shadow-lg shadow-gold-primary/20 hover:scale-[1.02] transition-transform mt-4 uppercase">
                             Submit Registration
                         </button>
+                    </div>
+
+                    <div x-show="paymentMethod === 'cash'" x-transition x-cloak>
+                        <button class="w-full bg-gray-900 text-white font-black py-5 rounded-[1.5rem] shadow-xl hover:bg-black transition-all flex items-center justify-center gap-3">
+                            REGISTER NOW <i class="fas fa-check-circle"></i>
+                        </button>
+                        <p class="text-[10px] text-gray-400 text-center mt-4 font-bold uppercase tracking-widest">
+                            *Your data will be held for 48 hours
+                        </p>
                     </div>
                 </div>
             </div>
