@@ -1,0 +1,149 @@
+[
+  {
+    "id": 1,
+    "category": "General English",
+    "name": "English Grammar & Vocabulary Development",
+    "desc": "Bangun fondasi bahasa Inggris yang kuat melalui pemahaman tata bahasa dan penguasaan kosakata yang luas.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 2,
+    "category": "General English",
+    "name": "Speaking & Writing",
+    "desc": "Fokus pada keterampilan aktif untuk berkomunikasi secara lisan dan tulisan dengan percaya diri.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 3,
+    "category": "General English",
+    "name": "Listening & Reading Comprehension",
+    "desc": "Pertajam kemampuan memahami teks dan percakapan bahasa Inggris dalam berbagai konteks.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 4,
+    "category": "General English",
+    "name": "English Grammar & Vocabulary (Online)",
+    "desc": "Program pengembangan tata bahasa dan kosakata yang fleksibel, dapat diakses dari mana saja.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 5,
+    "category": "IELTS Preparation",
+    "name": "IELTS Writing Skills",
+    "desc": "Teknik khusus untuk menguasai Task 1 dan Task 2 guna mencapai skor penulisan yang maksimal.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 6,
+    "category": "IELTS Preparation",
+    "name": "IELTS Speaking Skills",
+    "desc": "Latihan intensif untuk meningkatkan kelancaran, pengucapan, dan akurasi saat wawancara IELTS.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 7,
+    "category": "IELTS Preparation",
+    "name": "Introduction to IELTS",
+    "desc": "Kenali format ujian dan strategi dasar untuk menghadapi keempat komponen tes IELTS.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 8,
+    "category": "IELTS Preparation",
+    "name": "Introduction to IELTS (Online)",
+    "desc": "Panduan dasar format dan strategi IELTS melalui kelas daring yang interaktif.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 9,
+    "category": "IELTS Preparation",
+    "name": "IELTS Preparation Course",
+    "desc": "Kursus komprehensif yang mencakup seluruh materi dan simulasi ujian IELTS.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 10,
+    "category": "IELTS Preparation",
+    "name": "IELTS Listening & Reading Skills",
+    "desc": "Strategi cepat menangkap poin penting dan memahami teks panjang di bawah tekanan waktu.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 11,
+    "category": "TOEFL Preparation",
+    "name": "TOEFL ITP Listening Comprehension",
+    "desc": "Tingkatkan kemampuan identifikasi ide utama dan detail kecil dari percakapan akademik.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 12,
+    "category": "TOEFL Preparation",
+    "name": "TOEFL ITP Reading Comprehension",
+    "desc": "Latihan mendalam untuk menganalisis teks akademik dan memperkaya kosa kata formal.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 13,
+    "category": "TOEFL Preparation",
+    "name": "TOEFL ITP All Skills",
+    "desc": "Paket lengkap yang membahas Listening, Structure, dan Reading untuk persiapan total.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 14,
+    "category": "TOEFL Preparation",
+    "name": "TOEFL ITP Preparation Strategies For All Skills",
+    "desc": "Kumpulan trik dan strategi cepat menjawab soal TOEFL ITP secara efisien.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 15,
+    "category": "Computer Literacy",
+    "name": "MS Office: Word, Excel & PowerPoint",
+    "desc": "Kuasai tiga pilar utama administrasi perkantoran untuk meningkatkan produktivitas Anda.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 16,
+    "category": "Computer Literacy",
+    "name": "Practical Guide to Using Canva",
+    "desc": "Belajar desain grafis secara mudah dan praktis untuk kebutuhan media sosial dan presentasi.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 17,
+    "category": "Computer Literacy",
+    "name": "Google Apps: Docs, Slides, Spreadsheet, Gmail & Drive",
+    "desc": "Optimalisasi ekosistem Google untuk kolaborasi kerja jarak jauh yang efektif.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 18,
+    "category": "Community Development",
+    "name": "Leadership Skills",
+    "desc": "Kembangkan kualitas kepemimpinan, komunikasi organisasi, dan manajemen tim.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 19,
+    "category": "Community Development",
+    "name": "Social Project Design",
+    "desc": "Tahapan merancang proyek sosial yang terencana, terukur, dan berdampak nyata.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 20,
+    "category": "Sharing Session",
+    "name": "Career Talk Sharing",
+    "desc": "Wawasan langsung dari praktisi profesional tentang dunia kerja dan pengembangan karier.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  },
+  {
+    "id": 21,
+    "category": "Sharing Session",
+    "name": "Education Scholarship Sharing",
+    "desc": "Sesi diskusi mendalam mengenai persiapan dokumen dan strategi mendapatkan beasiswa.",
+    "image": "https://images.unsplash.com/photo-1517842645767-c639042777db?w=800&q=80"
+  }
+]

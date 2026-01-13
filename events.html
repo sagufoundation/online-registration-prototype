@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events | SAGU Foundation Dashboard</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#d4af37',
+                            primary: '#b8860b',
+                            dark: '#8b6508',
+                            soft: 'rgba(184, 134, 11, 0.05)',
+                        }
+                    },
+                    fontFamily: { sans: ['Public Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-[#fcfcfc] text-gray-800 font-sans antialiased">
+
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50" x-data="{ open: false }">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <a href="home.html" class="flex items-center gap-3">
+                        <img src="https://sagufoundation.org/wp-content/uploads/2022/11/SAGU-FOUNDATION-FONT-HITAM-1-600x599.png" alt="Logo" class="h-10 w-auto">
+                        <span class="text-xl font-extrabold tracking-tight text-gray-900 hidden sm:block">SAGU Foundation</span>
+                    </a>
+                </div>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="home.html" class="text-sm font-semibold text-gray-500 hover:text-gold-primary transition">Home</a>
+                    <a href="courses.html" class="text-sm font-semibold text-gray-500 hover:text-gold-primary transition">Your Courses</a>
+                    <a href="events.html" class="text-sm font-semibold text-gold-primary border-b-2 border-gold-primary py-1">Events</a>
+                    
+                    <div class="relative" x-data="{ userOpen: false }">
+                        <button @click="userOpen = !userOpen" class="flex items-center gap-3 bg-gold-soft border border-gold-primary/10 px-4 py-2 rounded-full hover:bg-white transition focus:outline-none">
+                            <div class="w-8 h-8 gold-gradient rounded-full flex items-center justify-center text-white text-xs font-bold shadow-md">JD</div>
+                            <span class="text-sm font-bold text-gold-dark">John Doe</span>
+                            <i class="fas fa-chevron-down text-[10px] text-gold-dark transition" :class="userOpen ? 'rotate-180' : ''"></i>
+                        </button>
+                        <div x-show="userOpen" @click.away="userOpen = false" x-cloak x-transition class="absolute right-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50">
+                            <a href="profile.html" class="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gold-soft hover:text-gold-primary"><i class="far fa-user me-2"></i> Profile</a>
+                            <div class="border-t border-gray-50 my-1"></div>
+                            <a href="login.html" class="block px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:hidden flex items-center">
+                    <button @click="open = !open" class="text-gray-500"><i class="fas" :class="open ? 'fa-times' : 'fa-bars'"></i></button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <header class="mb-12 flex flex-col md:flex-row md:items-end justify-between gap-6">
+            <div class="max-w-2xl">
+                <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight">Upcoming Events</h1>
+                <p class="mt-3 text-gray-500 text-lg">Don't miss out on our seminars, workshops, and community gatherings.</p>
+            </div>
+            <div class="flex bg-white p-1 rounded-2xl shadow-sm border border-gray-100">
+                <button class="px-6 py-2.5 rounded-xl bg-gold-primary text-white text-xs font-bold uppercase tracking-wider">All Events</button>
+                <button class="px-6 py-2.5 rounded-xl text-gray-400 hover:text-gold-primary text-xs font-bold uppercase tracking-wider transition">Registered</button>
+            </div>
+        </header>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            
+            <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1540575861501-7cf05a4b125a?auto=format&fit=crop&q=80&w=800" alt="Seminar" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-white/90 backdrop-blur px-4 py-2 rounded-2xl text-xs font-black text-gold-dark shadow-sm uppercase tracking-widest">
+                            Seminar
+                        </span>
+                    </div>
+                    <div class="absolute bottom-4 right-4">
+                        <div class="bg-white p-3 rounded-2xl shadow-lg text-center min-w-[60px]">
+                            <span class="block text-xl font-black text-gray-900 leading-none">24</span>
+                            <span class="text-[10px] font-bold text-gold-primary uppercase tracking-tighter">Jan 2026</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8">
+                    <h3 class="text-xl font-extrabold text-gray-900 group-hover:text-gold-primary transition duration-300 line-clamp-2 min-h-[3.5rem]">
+                        International Scholarship Forum 2026
+                    </h3>
+                    
+                    <div class="mt-6 space-y-4 border-t border-dashed border-gray-100 pt-6">
+                        <div class="flex items-center gap-3 text-gray-500">
+                            <div class="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-gold-primary text-sm">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <span class="text-sm font-semibold italic">09:00 AM - 03:00 PM</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-500">
+                            <div class="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-gold-primary text-sm">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <span class="text-sm font-semibold">Grand Ballroom, Jayapura</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 flex items-center justify-between gap-4">
+                        <div class="flex -space-x-2">
+                            <img src="https://i.pravatar.cc/150?u=1" class="w-8 h-8 rounded-full border-2 border-white shadow-sm">
+                            <img src="https://i.pravatar.cc/150?u=2" class="w-8 h-8 rounded-full border-2 border-white shadow-sm">
+                            <div class="w-8 h-8 rounded-full bg-gray-100 border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-400">+42</div>
+                        </div>
+                        <a href="#" class="gold-gradient px-6 py-3 rounded-2xl text-white text-xs font-bold tracking-widest shadow-lg shadow-gold-primary/20 hover:shadow-gold-primary/40 transition-all">
+                            REGISTER
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 overflow-hidden group">
+                <div class="relative h-56 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&q=80&w=800" alt="Workshop" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                    <div class="absolute top-4 left-4">
+                        <span class="bg-white/90 backdrop-blur px-4 py-2 rounded-2xl text-xs font-black text-blue-600 shadow-sm uppercase tracking-widest">
+                            Workshop
+                        </span>
+                    </div>
+                    <div class="absolute bottom-4 right-4">
+                        <div class="bg-white p-3 rounded-2xl shadow-lg text-center min-w-[60px]">
+                            <span class="block text-xl font-black text-gray-900 leading-none">05</span>
+                            <span class="text-[10px] font-bold text-gold-primary uppercase tracking-tighter">Feb 2026</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="p-8">
+                    <h3 class="text-xl font-extrabold text-gray-900 group-hover:text-gold-primary transition duration-300 line-clamp-2 min-h-[3.5rem]">
+                        Academic Writing Workshop for Post-Graduates
+                    </h3>
+                    
+                    <div class="mt-6 space-y-4 border-t border-dashed border-gray-100 pt-6">
+                        <div class="flex items-center gap-3 text-gray-500">
+                            <div class="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-gold-primary text-sm">
+                                <i class="fas fa-video"></i>
+                            </div>
+                            <span class="text-sm font-semibold italic">Zoom Cloud Meeting</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-gray-500">
+                            <div class="w-8 h-8 rounded-lg bg-gray-50 flex items-center justify-center text-gold-primary text-sm">
+                                <i class="fas fa-tag"></i>
+                            </div>
+                            <span class="text-sm font-semibold">Free for Foundation Members</span>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <a href="#" class="block w-full text-center border-2 border-gray-900 text-gray-900 px-6 py-3 rounded-2xl text-xs font-black tracking-widest hover:bg-gray-900 hover:text-white transition-all">
+                            VIEW DETAILS
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-50 rounded-[2.5rem] border border-gray-200 shadow-none opacity-80 flex flex-col grayscale hover:grayscale-0 transition-all duration-500 overflow-hidden relative group">
+                <div class="absolute inset-0 z-10 bg-gray-900/5 pointer-events-none"></div>
+                <div class="relative h-56 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&q=80&w=800" alt="Networking" class="w-full h-full object-cover">
+                    <div class="absolute top-4 right-4 z-20">
+                        <span class="bg-red-100 text-red-600 px-4 py-2 rounded-2xl text-[10px] font-black uppercase tracking-[0.2em] shadow-sm">
+                            Closed
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="p-8 flex-1 flex flex-col">
+                    <h3 class="text-xl font-extrabold text-gray-400 min-h-[3.5rem]">
+                        SAGU Annual Networking Night & Gala
+                    </h3>
+                    
+                    <div class="mt-6 space-y-4 mb-8">
+                        <p class="text-sm text-gray-400 italic">Registration for this event has reached maximum capacity. Please join our waiting list for the next session.</p>
+                    </div>
+
+                    <div class="mt-auto">
+                        <button disabled class="w-full bg-gray-200 text-gray-400 cursor-not-allowed px-6 py-4 rounded-2xl text-xs font-bold tracking-widest uppercase">
+                            Sold Out
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="mt-16 text-center">
+            <button class="bg-white border-2 border-gray-100 px-10 py-4 rounded-2xl text-sm font-extrabold text-gray-600 hover:border-gold-primary hover:text-gold-primary transition-all duration-300">
+                LOAD MORE EVENTS
+            </button>
+        </div>
+    </main>
+
+    <footer class="bg-white border-t border-gray-50 mt-20 py-16">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <img src="https://sagufoundation.org/wp-content/uploads/2022/11/SAGU-FOUNDATION-FONT-HITAM-1-600x599.png" alt="Logo" class="h-10 mx-auto mb-8 grayscale opacity-30">
+            <div class="flex justify-center gap-6 mb-8 text-gray-400">
+                <a href="#" class="hover:text-gold-primary transition text-lg"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="hover:text-gold-primary transition text-lg"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="hover:text-gold-primary transition text-lg"><i class="fab fa-youtube"></i></a>
+            </div>
+            <p class="text-[10px] font-bold text-gray-300 uppercase tracking-[0.4em]">
+                &copy; 2026 SAGU Foundation. Excellence in Education.
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>

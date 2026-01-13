@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration | SAGU Foundation</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#d4af37',
+                            primary: '#b8860b',
+                            dark: '#8b6508',
+                            soft: 'rgba(184, 134, 11, 0.05)',
+                        }
+                    },
+                    fontFamily: { sans: ['Public Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-[#fcfcfc] text-gray-800 font-sans antialiased">
+
+    <nav class="bg-white border-b border-gray-100 py-4">
+        <div class="max-w-7xl mx-auto px-6 flex justify-between items-center">
+            <a href="home.html" class="flex items-center gap-3">
+                <img src="https://sagufoundation.org/wp-content/uploads/2022/11/SAGU-FOUNDATION-FONT-HITAM-1-600x599.png" alt="Logo" class="h-8 w-auto">
+            </a>
+            <a href="home.html" class="text-sm font-bold text-gray-400 hover:text-gray-900 transition">
+                <i class="fas fa-times me-2"></i> Cancel Registration
+            </a>
+        </div>
+    </nav>
+
+    <main class="max-w-4xl mx-auto px-6 py-12" x-data="{ showUpload: false }">
+        
+        <div class="mb-10">
+            <h1 class="text-3xl font-black text-gray-900 mb-2">Course Registration</h1>
+            <p class="text-gray-500">Please review the course details and complete your payment to secure your seat.</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-5 gap-10">
+            
+            <div class="lg:col-span-3 space-y-6">
+                <div class="bg-white rounded-[2rem] border border-gray-100 p-8 shadow-sm">
+                    <div class="flex items-center gap-2 mb-4">
+                        <span class="px-3 py-1 bg-gold-soft text-gold-primary text-[10px] font-black uppercase rounded-full">New Intake</span>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-gray-900 mb-6">Advanced TOEFL Preparation</h2>
+                    
+                    <div class="grid grid-cols-2 gap-6 mb-8">
+                        <div>
+                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Duration</p>
+                            <p class="font-bold text-gray-700">3 Months (24 Sessions)</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Schedule</p>
+                            <p class="font-bold text-gray-700">Tue & Thu (16:00 - 18:00)</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Instructor</p>
+                            <p class="font-bold text-gray-700">Prof. Elizabeth W.</p>
+                        </div>
+                        <div>
+                            <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Investment</p>
+                            <p class="font-bold text-gold-primary">Rp 2.500.000</p>
+                        </div>
+                    </div>
+
+                    <div class="border-t border-dashed border-gray-100 pt-6">
+                        <h4 class="text-sm font-black text-gray-900 mb-3 uppercase tracking-wider">Payment Steps:</h4>
+                        <ul class="space-y-3">
+                            <li class="flex gap-3 text-sm text-gray-500">
+                                <span class="w-5 h-5 rounded-full bg-gray-900 text-white flex items-center justify-center text-[10px] shrink-0">1</span>
+                                Transfer the exact amount to the bank account listed.
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-500">
+                                <span class="w-5 h-5 rounded-full bg-gray-900 text-white flex items-center justify-center text-[10px] shrink-0">2</span>
+                                Take a clear photo or screenshot of your transfer receipt.
+                            </li>
+                            <li class="flex gap-3 text-sm text-gray-500">
+                                <span class="w-5 h-5 rounded-full bg-gray-900 text-white flex items-center justify-center text-[10px] shrink-0">3</span>
+                                Upload the file and click "Complete Registration".
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="lg:col-span-2 space-y-6">
+                <div class="bg-gray-900 rounded-[2rem] p-8 text-white shadow-xl relative overflow-hidden">
+                    <div class="relative z-10">
+                        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.2em] mb-4">Official Payment Account</p>
+                        <div class="mb-6">
+                            <p class="text-xs text-gray-400 mb-1">Bank Central Asia (BCA)</p>
+                            <p class="text-xl font-black tracking-widest leading-none">8123 0044 55</p>
+                            <p class="text-sm font-bold mt-2">SAGU Foundation Indonesia</p>
+                        </div>
+                        <div class="flex items-center gap-2 text-gold-light">
+                            <i class="fas fa-shield-check"></i>
+                            <span class="text-[10px] font-bold uppercase">Verified Merchant</span>
+                        </div>
+                    </div>
+                    <i class="fas fa-university absolute -bottom-4 -right-4 text-8xl text-white/5"></i>
+                </div>
+
+                <div class="space-y-4">
+                    <button x-show="!showUpload" @click="showUpload = true" 
+                            class="w-full gold-gradient text-white font-black py-5 rounded-[1.5rem] shadow-lg shadow-gold-primary/20 hover:scale-[1.02] transition-transform flex items-center justify-center gap-3">
+                        CONFIRM PAYMENT <i class="fas fa-arrow-right"></i>
+                    </button>
+
+                    <div x-show="showUpload" x-transition x-cloak class="bg-white border-2 border-gold-primary/20 border-dashed rounded-[2rem] p-8 animate-fadeIn">
+                        <label class="block text-center cursor-pointer">
+                            <div class="w-16 h-16 bg-gold-soft rounded-full flex items-center justify-center text-gold-primary mx-auto mb-4">
+                                <i class="fas fa-cloud-upload-alt text-2xl"></i>
+                            </div>
+                            <span class="block text-sm font-black text-gray-900 uppercase tracking-widest mb-1">Upload Receipt</span>
+                            <span class="block text-xs text-gray-400 mb-4">JPG, PNG, or PDF (Max 2MB)</span>
+                            <input type="file" class="hidden">
+                        </label>
+                        
+                        <button class="w-full bg-gray-900 text-white font-black py-4 rounded-xl text-xs tracking-widest hover:bg-black transition mt-4 uppercase">
+                            Submit Registration
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-12 text-center">
+        <p class="text-[10px] font-bold text-gray-300 uppercase tracking-[0.4em]">&copy; 2026 SAGU Foundation</p>
+    </footer>
+
+</body>
+</html>

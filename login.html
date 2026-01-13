@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login | SAGU Foundation</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#d4af37',
+                            primary: '#b8860b',
+                            dark: '#8b6508',
+                            soft: 'rgba(184, 134, 11, 0.08)',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Public Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); }
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="bg-[#fcfcfc] text-gray-800 font-sans min-h-screen flex flex-col">
+
+    <div class="flex-grow flex items-center justify-center px-4 py-12">
+        <div class="w-full max-w-md bg-white rounded-[2.5rem] p-8 md:p-12 shadow-xl shadow-gray-200/40 border border-gray-100" 
+             x-data="{ showPassword: false }">
+            
+            <div class="text-center mb-10">
+                <img src="https://sagufoundation.org/wp-content/uploads/2022/11/SAGU-FOUNDATION-FONT-HITAM-1-600x599.png" 
+                     alt="SAGU Foundation" class="w-24 mx-auto mb-6 transform hover:scale-105 transition duration-300">
+                <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight mb-2">Welcome Back</h1>
+                <p class="text-gray-400 text-sm font-medium">Sign in to continue your journey</p>
+            </div>
+
+            <a href="home.html" class="flex items-center justify-center gap-3 w-full py-4 border-2 border-gray-50 rounded-2xl font-bold text-gray-600 hover:bg-gray-50 hover:border-gray-200 transition-all duration-300 group">
+                <img src="https://www.gstatic.com/firebasejs/ui/2.0.0/images/auth/google.svg" alt="Google" class="w-5 group-hover:scale-110 transition">
+                <span class="text-sm">Continue with Google</span>
+            </a>
+
+            <div class="flex items-center my-8">
+                <div class="flex-grow border-t border-gray-100"></div>
+                <span class="px-4 text-[10px] font-black text-gray-300 uppercase tracking-[0.2em]">Or with email</span>
+                <div class="flex-grow border-t border-gray-100"></div>
+            </div>
+
+            <form action="home.html" method="GET" class="space-y-6">
+                <div>
+                    <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2.5 ml-1">Phone Number or Email</label>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i class="far fa-envelope text-gray-300 group-focus-within:text-gold-primary transition"></i>
+                        </div>
+                        <input type="text" placeholder="e.g. name@email.com" 
+                               class="w-full pl-11 pr-5 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold shadow-inner">
+                    </div>
+                </div>
+
+                <div>
+                    <div class="flex justify-between items-center mb-2.5 px-1">
+                        <label class="text-xs font-bold text-gray-500 uppercase tracking-wider">Password</label>
+                        <a href="#" class="text-[11px] font-bold text-gray-400 hover:text-gold-primary transition">Forgot password?</a>
+                    </div>
+                    <div class="relative group">
+                        <div class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none">
+                            <i class="fas fa-lock text-gray-300 group-focus-within:text-gold-primary transition"></i>
+                        </div>
+                        <input :type="showPassword ? 'text' : 'password'" placeholder="Enter your password" 
+                               class="w-full pl-11 pr-12 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold shadow-inner">
+                        <button type="button" @click="showPassword = !showPassword" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-300 hover:text-gold-primary transition">
+                            <i class="fas" :class="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="w-full gold-gradient py-4 rounded-2xl text-white font-extrabold text-sm tracking-widest hover:shadow-xl hover:shadow-gold-primary/30 transition-all duration-300 transform hover:-translate-y-1 active:scale-95">
+                    SIGN IN
+                </button>
+            </form>
+
+            <div class="text-center mt-10">
+                <p class="text-sm text-gray-400 font-medium">
+                    Don't have an account? 
+                    <a href="register.html" class="text-gold-primary font-extrabold hover:underline ml-1">Register Now</a>
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-10 bg-white border-t border-gray-50 text-center">
+        <p class="text-[10px] font-bold text-gray-400 uppercase tracking-[0.25em]">
+            &copy; 2026 SAGU Foundation. All rights reserved.
+        </p>
+    </footer>
+
+</body>
+</html>
