@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Details | SAGU Foundation</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        gold: {
+                            light: '#d4af37',
+                            primary: '#b8860b',
+                            dark: '#8b6508',
+                            soft: 'rgba(184, 134, 11, 0.05)',
+                        }
+                    },
+                    fontFamily: { sans: ['Public Sans', 'sans-serif'] }
+                }
+            }
+        }
+    </script>
+    <style>
+        .gold-gradient { background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%); }
+    </style>
+</head>
+<body class="bg-gray-50 text-gray-800 font-sans antialiased">
+
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-20">
+                <div class="flex items-center gap-3">
+                    <a href="home.html" class="flex items-center gap-3 no-underline">
+                        <img src="https://sagufoundation.org/wp-content/uploads/2022/11/SAGU-FOUNDATION-FONT-HITAM-1-600x599.png" alt="Logo" class="h-10 w-auto">
+                    </a>
+                </div>
+                <div class="flex items-center">
+                    <a href="courses.html" class="text-xs font-bold text-gray-400 hover:text-gold-primary transition uppercase tracking-widest">
+                        <i class="fas fa-chevron-left me-2"></i> Back
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-4 py-12">
+        
+        <div class="bg-white rounded-[2.5rem] p-8 md:p-12 border border-gray-100 shadow-sm mb-10 relative overflow-hidden">
+            <div class="relative z-10">
+                <div class="flex items-center gap-3 mb-4">
+                    <span class="bg-green-100 text-green-700 text-[10px] font-black uppercase px-3 py-1 rounded-full">Completed</span>
+                    <span class="text-gold-primary font-black text-[10px] uppercase tracking-[0.2em]">General English Course</span>
+                </div>
+                <h1 class="text-3xl md:text-4xl font-black text-gray-900 mb-8 leading-tight">General English Speaking and Reading</h1>
+                
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                    <div>
+                        <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Final Grade</p>
+                        <p class="font-bold text-gray-800">A / 94.0</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Meetings</p>
+                        <p class="font-bold text-gray-800">16 Sessions</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Status</p>
+                        <p class="font-bold text-green-600">Passed</p>
+                    </div>
+                    <div>
+                        <p class="text-[10px] font-black text-gray-400 uppercase tracking-widest mb-1">Finished on</p>
+                        <p class="font-bold text-gray-800">Jan 12, 2026</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-10">
+            
+            <div class="lg:col-span-1 space-y-4">
+                <h3 class="text-sm font-black text-gray-900 uppercase tracking-widest mb-4 ml-2">Academic Documents</h3>
+                
+                <a href="certificate-detail.html" class="flex items-center justify-between p-6 bg-white border border-gray-100 rounded-3xl hover:border-gold-primary hover:shadow-md transition group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gold-soft flex items-center justify-center text-gold-primary">
+                            <i class="fas fa-award text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-black text-gray-900 uppercase">Digital Certificate</p>
+                            <p class="text-[11px] text-gray-400">View & Verify</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-xs text-gray-300 group-hover:text-gold-primary"></i>
+                </a>
+
+                <a href="report-detail.html" class="flex items-center justify-between p-6 bg-white border border-gray-100 rounded-3xl hover:border-gold-primary hover:shadow-md transition group">
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 rounded-2xl bg-gray-50 flex items-center justify-center text-gray-400 group-hover:bg-gold-soft group-hover:text-gold-primary transition">
+                            <i class="fas fa-file-chart-line text-lg"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs font-black text-gray-900 uppercase">Progress Reports</p>
+                            <p class="text-[11px] text-gray-400">Detailed Analytics</p>
+                        </div>
+                    </div>
+                    <i class="fas fa-external-link-alt text-xs text-gray-300 group-hover:text-gold-primary"></i>
+                </a>
+            </div>
+
+            <div class="lg:col-span-2">
+                <h3 class="text-sm font-black text-gray-900 uppercase tracking-widest mb-6 ml-2">Meetings and Topics</h3>
+                
+                <div class="bg-white rounded-[2.5rem] border border-gray-100 shadow-sm overflow-hidden">
+                    <div class="p-4 space-y-2">
+                        <div class="flex items-center gap-6 p-5 rounded-2xl hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
+                            <span class="text-xs font-black text-gray-300 w-8">01</span>
+                            <div class="flex-1">
+                                <p class="text-sm font-bold text-gray-900">Foundations of Daily Speaking</p>
+                                <p class="text-[11px] text-gray-400 italic">Self-introduction and greeting etiquette</p>
+                            </div>
+                            <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded">Attended</span>
+                        </div>
+
+                        <div class="flex items-center gap-6 p-5 rounded-2xl hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
+                            <span class="text-xs font-black text-gray-300 w-8">02</span>
+                            <div class="flex-1">
+                                <p class="text-sm font-bold text-gray-900">Active Reading Strategies</p>
+                                <p class="text-[11px] text-gray-400 italic">Skimming and scanning techniques</p>
+                            </div>
+                            <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded">Attended</span>
+                        </div>
+
+                        <div class="flex items-center gap-6 p-5 rounded-2xl hover:bg-gray-50 transition border border-transparent hover:border-gray-100">
+                            <span class="text-xs font-black text-gray-300 w-8">03</span>
+                            <div class="flex-1">
+                                <p class="text-sm font-bold text-gray-900">Opinion and Argumentation</p>
+                                <p class="text-[11px] text-gray-400 italic">Expressing agreement and disagreement</p>
+                            </div>
+                            <span class="text-[10px] font-bold text-green-600 bg-green-50 px-2 py-1 rounded">Attended</span>
+                        </div>
+
+                        <div class="py-4 text-center">
+                            <button class="text-[10px] font-black text-gold-primary uppercase tracking-[0.2em] hover:underline">View All 16 Topics</button>
+                        </div>
+                    </div>
+
+                    <div class="bg-gray-900 p-8 text-white">
+                        <div class="flex justify-between items-center">
+                            <div>
+                                <p class="text-[10px] font-bold text-gray-400 uppercase tracking-widest mb-1">Final Instructor Notes</p>
+                                <p class="text-sm italic text-gray-300">"Excellent participation in speaking drills."</p>
+                            </div>
+                            <i class="fas fa-quote-right text-3xl text-white/10"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="py-12 text-center">
+        <p class="text-[10px] font-bold text-gray-300 uppercase tracking-[0.4em]">&copy; 2026 SAGU Foundation</p>
+    </footer>
+
+</body>
+</html>
