@@ -9,8 +9,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Public+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
 
     <script>
         tailwind.config = {
@@ -36,206 +35,158 @@
         .gold-gradient {
             background: linear-gradient(135deg, #d4af37 0%, #b8860b 100%);
         }
-
-        [x-cloak] {
-            display: none !important;
+        [x-cloak] { display: none !important; }
+        
+        /* Padding bawah agar konten tidak tertutup navigasi mobile */
+        @media (max-width: 768px) {
+            body { padding-bottom: 80px; }
         }
     </style>
 </head>
 
 <body class="bg-gray-50 text-gray-800 font-sans antialiased">
 
-    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50" x-data="{ open: false }">
+    <nav class="bg-white border-b border-gray-100 sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20">
                 <div class="flex items-center gap-3">
-                    <a href="home.html" class="flex items-center gap-3 no-underline">
+                    <a href="home.html" class="flex items-center gap-2 sm:gap-3 no-underline">
                         <img src="https://sagufoundation.org/wp-content/uploads/2022/11/SAGU-FOUNDATION-FONT-HITAM-1-600x599.png"
-                            alt="Logo" class="h-10 w-auto">
-                        <span class="text-xl font-extrabold tracking-tight text-gray-900 hidden sm:block">SAGU
-                            Foundation</span>
+                            alt="Logo" class="h-8 sm:h-10 w-auto">
+                        <span class="text-lg sm:text-xl font-extrabold tracking-tight text-gray-900 block">
+                            SAGU Foundation
+                        </span>
                     </a>
                 </div>
 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="home.html"
-                        class="text-sm font-semibold text-gray-500 hover:text-gold-primary transition">Home</a>
-                    <a href="learning.html"
-                        class="text-sm font-bold text-gold-primary border-b-2 border-gold-primary py-1">My Learning</a>
+                    <a href="home.html" class="text-sm font-semibold text-gray-500 hover:text-gold-primary transition">Home</a>
+                    <a href="learning.html" class="text-sm font-bold text-gold-primary border-b-2 border-gold-primary py-1">My Learning</a>
 
                     <div class="relative" x-data="{ userOpen: false }">
                         <button @click="userOpen = !userOpen"
-                            class="flex items-center gap-3 bg-gold-soft border border-gold-primary/10 px-4 py-2 rounded-full hover:bg-white hover:border-gold-primary transition focus:outline-none">
-                            <div
-                                class="w-8 h-8 gold-gradient rounded-full flex items-center justify-center text-white text-xs font-bold">
-                                JD</div>
+                            class="flex items-center gap-3 bg-gold-soft border border-gold-primary/10 px-4 py-2 rounded-full hover:bg-white transition focus:outline-none">
+                            <div class="w-8 h-8 gold-gradient rounded-full flex items-center justify-center text-white text-xs font-bold shadow-sm">JD</div>
                             <span class="text-sm font-bold text-gold-dark">John Doe</span>
-                            <i class="fas fa-chevron-down text-[10px] text-gold-dark transition"
-                                :class="userOpen ? 'rotate-180' : ''"></i>
+                            <i class="fas fa-chevron-down text-[10px] text-gold-dark transition" :class="userOpen ? 'rotate-180' : ''"></i>
                         </button>
-
-                        <div x-show="userOpen" @click.away="userOpen = false" x-cloak
-                            x-transition:enter="transition ease-out duration-100"
-                            class="absolute right-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50">
-                            <a href="profile.html"
-                                class="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gold-soft hover:text-gold-primary"><i
-                                    class="far fa-user me-2"></i> Profile</a>
+                        <div x-show="userOpen" @click.away="userOpen = false" x-cloak class="absolute right-0 mt-2 w-48 bg-white rounded-2xl shadow-xl border border-gray-100 py-2 z-50">
+                            <a href="profile.html" class="block px-4 py-2 text-sm font-semibold text-gray-700 hover:bg-gold-soft hover:text-gold-primary"><i class="far fa-user me-2"></i> Profile</a>
                             <div class="border-t border-gray-50 my-1"></div>
-                            <a href="login.html"
-                                class="block px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50"><i
-                                    class="fas fa-sign-out-alt me-2"></i> Logout</a>
+                            <a href="login.html" class="block px-4 py-2 text-sm font-semibold text-red-600 hover:bg-red-50"><i class="fas fa-sign-out-alt me-2"></i> Logout</a>
                         </div>
                     </div>
                 </div>
 
                 <div class="md:hidden flex items-center">
-                    <button @click="open = !open" class="text-gray-500 hover:text-gray-900 focus:outline-none">
-                        <i class="fas fa-bars text-xl" x-show="!open"></i>
-                        <i class="fas fa-times text-xl" x-show="open"></i>
-                    </button>
+                    <a href="profile.html" class="w-9 h-9 gold-gradient rounded-full flex items-center justify-center text-white text-[10px] font-bold border-2 border-white shadow-sm">JD</a>
                 </div>
-            </div>
-        </div>
-
-        <div x-show="open" x-cloak class="md:hidden bg-white border-t border-gray-100 px-4 py-4 space-y-3">
-            <a href="home.html" class="block text-base font-semibold text-gray-600 px-4 py-2">Home</a>
-            <a href="learning.html"
-                class="block text-base font-semibold text-gold-primary bg-gold-soft rounded-xl px-4 py-2">My
-                Learning</a>
-            <div class="border-t border-gray-100 pt-3">
-                <a href="profile.html" class="block text-base font-semibold text-gray-600 px-4 py-2">Profile</a>
-                <a href="login.html" class="block text-base font-semibold text-red-600 px-4 py-2">Logout</a>
             </div>
         </div>
     </nav>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <header class="mb-12">
-            <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">My Learning Progress</h1>
-            <p class="mt-2 text-gray-500 max-w-2xl text-lg">Manage your academic journey, track session progress, and
-                access certificates.</p>
-        </header>
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-white border-t border-gray-100 px-6 py-3 flex justify-around items-center z-50 shadow-[0_-4px_20px_rgba(0,0,0,0.05)]">
+        <a href="home.html" class="flex flex-col items-center gap-1 text-gray-400">
+            <i class="fas fa-home text-lg"></i>
+            <span class="text-[10px] font-bold uppercase">Home</span>
+        </a>
+        <a href="learning.html" class="flex flex-col items-center gap-1 text-gold-primary">
+            <i class="fas fa-book-open text-lg"></i>
+            <span class="text-[10px] font-bold uppercase">Learning</span>
+        </a>
+        <a href="profile.html" class="flex flex-col items-center gap-1 text-gray-400">
+            <i class="fas fa-user text-lg"></i>
+            <span class="text-[10px] font-bold uppercase">Profile</span>
+        </a>
+        <a href="login.html" class="flex flex-col items-center gap-1 text-red-400">
+            <i class="fas fa-sign-out-alt text-lg"></i>
+            <span class="text-[10px] font-bold uppercase">Exit</span>
+        </a>
+    </div>
 
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+    <header class="mb-10 text-center md:text-left">
+        <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 tracking-tight">My Learning Progress</h1>
+        <p class="mt-2 text-gray-500 max-w-2xl text-base md:text-lg mx-auto md:mx-0">Manage your academic journey and track your session progress.</p>
+    </header>
 
-            <div
-                class="bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group overflow-hidden">
-                <div class="relative h-48 overflow-hidden">
-                    <img src="images/posters/poster1.png"
-                        onerror="this.src='https://placehold.co/600x400/EEE/31343C?text=English+Program'"
-                        alt="Program Poster"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 justify-items-center">
 
-                <div class="p-8 pb-6 border-b border-dashed border-gray-100">
-                    <span
-                        class="text-[10px] font-extrabold text-gold-primary uppercase tracking-[0.2em] mb-2 block">Foundation
-                        Program</span>
-                    <h3 class="text-xl font-extrabold text-gray-900 group-hover:text-gold-primary transition">English
-                        for Academic Purpose</h3>
-                </div>
-
-                <div class="p-8 pt-6 mt-auto">
-                    <a href="course-detail.html"
-                        class="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-gold-primary transition shadow-lg shadow-gray-200 uppercase text-sm tracking-wider">
-                        View Details <i class="fas fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
+        <div class="w-full max-w-sm bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden relative text-center md:text-left">
+            <div class="absolute top-4 right-4 z-10">
+                <span class="bg-green-500 text-white text-[9px] font-black uppercase px-3 py-1 rounded-full shadow-lg">Completed</span>
             </div>
-
-            <div
-                class="bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group overflow-hidden">
-                <div class="relative h-48 overflow-hidden">
-                    <img src="images/posters/poster2.png"
-                        onerror="this.src='https://placehold.co/600x400/EEE/31343C?text=IELTS+Prep'"
-                        alt="Program Poster"
-                        class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-                </div>
-
-                <div class="p-8 pb-6 border-b border-dashed border-gray-100">
-                    <span
-                        class="text-[10px] font-extrabold text-gold-primary uppercase tracking-[0.2em] mb-2 block">Academic
-                        Skill</span>
-                    <h3 class="text-xl font-extrabold text-gray-900 group-hover:text-gold-primary transition">IELTS
-                        Intensive Prep</h3>
-                </div>
-
-                <div class="p-8 pt-6 mt-auto">
-                    <a href="course-detail.html"
-                        class="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-gold-primary transition shadow-lg shadow-gray-200 uppercase text-sm tracking-wider">
-                        View Details <i class="fas fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
+            <div class="relative h-44 overflow-hidden grayscale">
+                <img src="https://placehold.co/600x400/EEE/31343C?text=General+English" alt="Program" class="w-full h-full object-cover">
             </div>
-
-            <div
-                class="bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 flex flex-col group overflow-hidden relative">
-                <div class="absolute top-4 right-4 z-10">
-                    <span
-                        class="bg-green-500 text-white text-[10px] font-black uppercase px-3 py-1 rounded-full shadow-lg">Completed</span>
-                </div>
-
-                <div
-                    class="relative h-48 overflow-hidden grayscale group-hover:grayscale-0 transition-all duration-500">
-                    <img src="images/posters/poster3.png"
-                        onerror="this.src='https://placehold.co/600x400/EEE/31343C?text=Leadership'"
-                        alt="Program Poster" class="w-full h-full object-cover">
-                </div>
-
-                <div class="p-8 pb-6 border-b border-dashed border-gray-100">
-                    <span
-                        class="text-[10px] font-extrabold text-gray-400 uppercase tracking-[0.2em] mb-2 block">Leadership</span>
-                    <h3 class="text-xl font-extrabold text-gray-900 group-hover:text-gold-primary transition">Personal
-                        Development</h3>
-                </div>
-
-                <div class="p-8 pt-6 mt-auto">
-                    <a href="course-detail.html"
-                        class="flex items-center justify-center gap-2 w-full bg-gray-100 text-gray-900 font-bold py-4 rounded-2xl hover:bg-gray-900 hover:text-white transition uppercase text-sm tracking-wider">
-                        View Details <i class="fas fa-arrow-right text-[10px]"></i>
-                    </a>
-                </div>
+            <div class="p-6 md:p-8 flex-1">
+                <span class="text-[10px] font-extrabold text-gold-primary uppercase tracking-[0.2em] mb-2 block">General English</span>
+                <h3 class="text-lg md:text-xl font-extrabold text-gray-900 transition leading-snug">GE Listening and Reading</h3>
             </div>
-
+            <div class="p-6 md:p-8 pt-0 mt-auto">
+                <a href="course-detail.html" class="flex items-center justify-center gap-2 w-full bg-gray-100 text-gray-900 font-bold py-4 rounded-2xl hover:bg-gray-900 hover:text-white transition uppercase text-xs tracking-wider">
+                    View Details <i class="fas fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
         </div>
 
-        <div class="mt-16 flex flex-col sm:flex-row items-center justify-between gap-6 border-t border-gray-100 pt-10">
-            <p class="text-sm text-gray-500 font-medium">
-                Showing <span class="text-gray-900 font-bold">1</span> to <span class="text-gray-900 font-bold">3</span>
-                of <span class="text-gray-900 font-bold">12</span> learnings
-            </p>
-
-            <nav class="flex items-center gap-2">
-                <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 text-gray-400 hover:border-gold-primary hover:text-gold-primary transition">
-                    <i class="fas fa-chevron-left text-xs"></i>
+        <div class="w-full max-w-sm bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden relative text-center md:text-left">
+            <div class="absolute top-4 right-4 z-10">
+                <span class="bg-blue-500 text-white text-[9px] font-black uppercase px-3 py-1 rounded-full shadow-lg">On Progress</span>
+            </div>
+            <div class="relative h-44 overflow-hidden">
+                <img src="https://placehold.co/600x400/EEE/31343C?text=Computer+Literacy" alt="Program" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+                <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+            </div>
+            <div class="p-6 md:p-8 flex-1">
+                <span class="text-[10px] font-extrabold text-gold-primary uppercase tracking-[0.2em] mb-2 block">Computer Literacy</span>
+                <h3 class="text-lg md:text-xl font-extrabold text-gray-900 group-hover:text-gold-primary transition leading-snug">Google Apps: Gmail, Drive, Docs, Spreadsheet, Slides</h3>
+            </div>
+            <div class="p-6 md:p-8 pt-0 mt-auto">
+                <a href="course-detail.html" class="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-gold-primary transition uppercase text-xs tracking-wider">
+                    View Details <i class="fas fa-arrow-right text-[10px]"></i>
                 </a>
-                <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-xl bg-gold-primary text-white font-bold shadow-lg shadow-gold-primary/20">1</a>
-                <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 text-gray-600 font-bold hover:border-gold-primary hover:text-gold-primary transition">2</a>
-                <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 text-gray-600 font-bold hover:border-gold-primary hover:text-gold-primary transition">3</a>
-                <span class="px-2 text-gray-300 font-bold">...</span>
-                <a href="#"
-                    class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 text-gray-400 hover:border-gold-primary hover:text-gold-primary transition">
-                    <i class="fas fa-chevron-right text-xs"></i>
-                </a>
-            </nav>
+            </div>
         </div>
-    </main>
 
-    <footer class="bg-white border-t border-gray-100 mt-20 py-12">
+        <div class="w-full max-w-sm bg-white rounded-[2rem] border border-gray-100 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col group overflow-hidden relative text-center md:text-left">
+            <div class="absolute top-4 right-4 z-10">
+                <span class="bg-amber-500 text-white text-[9px] font-black uppercase px-3 py-1 rounded-full shadow-lg">Requested</span>
+            </div>
+            <div class="relative h-44 overflow-hidden">
+                <img src="https://placehold.co/600x400/EEE/31343C?text=TOEFL+Simulation" alt="Program" class="w-full h-full object-cover group-hover:scale-110 transition duration-500">
+            </div>
+            <div class="p-6 md:p-8 flex-1">
+                <span class="text-[10px] font-extrabold text-gold-primary uppercase tracking-[0.2em] mb-2 block">TOEFL Simulation</span>
+                <h3 class="text-lg md:text-xl font-extrabold text-gray-900 group-hover:text-gold-primary transition leading-snug">TOEFL Simulation Listening</h3>
+            </div>
+            <div class="p-6 md:p-8 pt-0 mt-auto">
+                <a href="course-detail.html" class="flex items-center justify-center gap-2 w-full bg-gray-900 text-white font-bold py-4 rounded-2xl hover:bg-gold-primary transition uppercase text-xs tracking-wider">
+                    View Details <i class="fas fa-arrow-right text-[10px]"></i>
+                </a>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="mt-12 flex flex-col items-center justify-between gap-6 border-t border-gray-100 pt-8">
+        <p class="text-xs text-gray-500 font-medium order-2 md:order-1">
+            Showing <span class="text-gray-900 font-bold">1</span> to <span class="text-gray-900 font-bold">3</span> of 4
+        </p>
+        <nav class="flex items-center gap-2 order-1 md:order-2">
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 text-gray-400"><i class="fas fa-chevron-left text-xs"></i></a>
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl bg-gold-primary text-white font-bold">1</a>
+            <a href="#" class="w-10 h-10 flex items-center justify-center rounded-xl border border-gray-200 text-gray-400"><i class="fas fa-chevron-right text-xs"></i></a>
+        </nav>
+    </div>
+</main>
+
+    <footer class="bg-white border-t border-gray-100 mt-10 py-10 hidden md:block">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <img src="https://sagufoundation.org/wp-content/uploads/2022/11/SAGU-FOUNDATION-FONT-HITAM-1-600x599.png"
-                alt="Logo" class="h-8 mx-auto mb-6 grayscale opacity-50">
             <p class="text-sm font-bold text-gray-400 uppercase tracking-widest">SAGU Foundation Portal</p>
-            <p class="text-xs text-gray-400 mt-2">&copy; 2026 SAGU Foundation. Empowering Through Education.</p>
+            <p class="text-xs text-gray-400 mt-2">&copy; 2026 SAGU Foundation.</p>
         </div>
     </footer>
 
 </body>
-
 </html>

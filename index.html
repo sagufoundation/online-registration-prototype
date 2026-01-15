@@ -66,20 +66,20 @@
                 <div>
                     <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1">Full Name</label>
                     <input type="text" placeholder="Enter your full name" 
-                           class="w-full px-5 py-3.5 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold">
+                           class="w-full pl-11 pr-5 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold shadow-inner">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1">Phone Number</label>
                     <input type="tel" placeholder="e.g. 08123456789" 
-                           class="w-full px-5 py-3.5 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold">
+                           class="w-full pl-11 pr-5 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold shadow-inner">
                 </div>
 
                 <div>
                     <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1">Password</label>
                     <div class="relative">
                         <input :type="showPass ? 'text' : 'password'" placeholder="Min. 8 characters" 
-                               class="w-full px-5 py-3.5 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold">
+                               class="w-full pl-11 pr-5 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold shadow-inner">
                         <button type="button" @click="showPass = !showPass" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gold-primary transition">
                             <i class="fas" :class="showPass ? 'fa-eye-slash' : 'fa-eye'"></i>
                         </button>
@@ -90,7 +90,7 @@
                     <label class="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1">Confirm Password</label>
                     <div class="relative">
                         <input :type="showConfirm ? 'text' : 'password'" placeholder="Repeat your password" 
-                               class="w-full px-5 py-3.5 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold">
+                               class="w-full pl-11 pr-5 py-4 bg-gray-50 border-2 border-transparent rounded-2xl focus:bg-white focus:border-gold-primary focus:outline-none transition-all duration-300 text-sm font-semibold shadow-inner">
                         <button type="button" @click="showConfirm = !showConfirm" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gold-primary transition">
                             <i class="fas" :class="showConfirm ? 'fa-eye-slash' : 'fa-eye'"></i>
                         </button>
