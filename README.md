@@ -5,6 +5,8 @@ GitHub Project Management: https://github.com/orgs/sagufoundation/projects/5
 
 ChatGPT: https://chatgpt.com/share/6968f9ce-9158-800e-b7bd-3e137bcb40ea
 
+Demo GitHub Pages: https://sagufoundation.github.io/connect-online-registration-prototype/
+
 users
 ```bash
     users
